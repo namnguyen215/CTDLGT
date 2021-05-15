@@ -16,7 +16,7 @@ int main()
         for(int i=1;i<n;i++)
         {
             if(a[i]-a[i-1]>1)
-                res+=a[i]-a[i-1];
+                res+=a[i]-a[i-1]-1;
         }
         cout<<res<<endl;
     }

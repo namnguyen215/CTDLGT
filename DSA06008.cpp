@@ -1,5 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
+long dem(int n1,int n2,int a[],int b[])
+{
+    int count=0;
+    for(int i=0;i<n1;i++)
+    {
+        for(int j=0;j<n2;j++)
+        {
+            float x,y;
+            x=float(log(a[i]))/ float(a[i]);
+            y=float(log(b[j]))/ float(b[j]);
+            if(x>y)
+                count++;
+            // else{
+            //     return count;
+            // }
+        }
+    } 
+    return count;   
+}
 int main()
 {
     int t;cin>>t;
@@ -11,15 +30,6 @@ int main()
             cin>>a[i];
         for(int i=0;i<n2;i++)
             cin>>b[i];
-        int count=0;
-        for(int i=0;i<n1;i++)
-        {
-            for(int j=0;j<n2;j++)
-            {
-                if(b[j]*log(a[i])>a[i]*log(b[j]))
-                    count++;
-            }
-        }
-        cout<<count<<endl;
+        cout<<dem(n1,n2,a,b)<<endl;
     }
 }

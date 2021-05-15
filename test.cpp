@@ -2,28 +2,20 @@
 #include<climits>
 using namespace std;
 
-int maxSubArraySum(int a[], int size)
-{
-	int max_so_far = INT_MIN, max_ending_here = 0;
-
-	for (int i = 0; i < size; i++)
-	{
-		max_ending_here = max_ending_here + a[i];
-		if (max_so_far < max_ending_here)
-			max_so_far = max_ending_here;
-
-		if (max_ending_here < 0)
-			max_ending_here = 0;
-	}
-	return max_so_far;
-}
-
-/*Driver program to test maxSubArraySum*/
 int main()
 {
-	int a[] = {-2, -3, -4, -1, -2, -1, -5, -3};
-	int n = sizeof(a)/sizeof(a[0]);
-	int max_sum = maxSubArraySum(a, n);
-	cout << "Maximum contiguous sum is " << max_sum;
-	return 0;
+	int a[20][20];
+	for(int i=0;i<13;i++)
+		for(int j=0;j<13;j++)
+			cin>>a[i][j];
+	for(int i=0;i<13;i++)
+	{
+		for(int j=0;j<13;j++)
+		{
+			cout<<a[i][j];
+			if(j<12)
+				cout<<",";
+		}
+		cout<<endl;
+	}
 }
