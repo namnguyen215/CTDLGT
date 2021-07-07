@@ -1,3 +1,6 @@
+//Euler
+//Ton tai chu trinh neu tat ca cac dinh deu co bac chan
+//Ton tai duong di Euler neu co 2 dinh bac le
 #include<bits/stdc++.h>
 using namespace std;
 int check(int a[],int v)

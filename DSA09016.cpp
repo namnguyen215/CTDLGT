@@ -36,7 +36,7 @@ string check()
 {
     for(int i=1;i<=v;i++)
     {
-        if(chuaxet[i] && bfs(i))
+        if(bfs(i))
             return "YES";
     }
     return "NO";

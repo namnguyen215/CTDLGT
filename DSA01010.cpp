@@ -1,3 +1,4 @@
+//Sinh to hop ke tiep
 #include<bits/stdc++.h>
 using namespace std;
 bool last=false;
@@ -14,12 +15,6 @@ void sinh(int a[],int n, int k)
         for(int j=i+1;j<=k;j++)
             a[j]=a[i]+j-i;
     }
-}
-void print(int a[],int k)
-{
-    for(int i=1;i<=k;i++)
-        cout<<a[i]<<" ";
-    cout<<endl;
 }
 int main()
 {

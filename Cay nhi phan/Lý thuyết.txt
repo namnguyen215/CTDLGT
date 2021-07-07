@@ -1,0 +1,3 @@
+Duyệt tiền thứ tự(preorder): Gốc-Trái-Phải
+Duyệt trung tự(inorder): Trái-Gốc-Phải
+Duyệt hậu(post-order): Trái-Phải-Gốc

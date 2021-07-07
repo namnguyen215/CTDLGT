@@ -1,30 +1,35 @@
 #include<bits/stdc++.h>
 using namespace std;
-string check(int a[],int n)
-{
-    int left=0,right=0;
-    for(int i=0;i<n;i++)
-        left+=a[i];
-    for(int i=n-1;i>=0;i--)
-    {
-        right+=a[i];
-        left-=a[i];
-        cout<<left<<" "<<right<<endl;
-        if(left==right)
-            return "YES";
-    }
-    return "NO";
-}
 int main()
 {
     int t;cin>>t;
     while(t--)
     {
-        int n;cin>>n;
+        int n,sum=0;cin>>n;
         int a[n+1];
-        for(int i=0;i<n;i++)
+        for(int i=0;i<n;i++){
             cin>>a[i];
-        sort(a,a+n);
-        cout<<check(a,n)<<endl;
+            sum+=a[i];
+        }
+        if(sum%2!=0)
+            cout<<"NO";
+        else
+        {
+            int s=sum/2;
+            int d[s+1]={0}; //a[i]=1-> co the tao ra a[i] tu cac so da cho
+            d[0]=1;
+            for(int i=0;i<n;i++)
+            {
+                for(int j=s;j>=a[i];j--)
+                {
+                    if(d[j-a[i]]==1)    //ton tai mot so
+                        d[j]=1;
+                }
+            }
+            if(d[s]==1)
+                cout<<"YES";
+            else cout<<"NO";
+        }
+        cout<<endl;
     }
 }
