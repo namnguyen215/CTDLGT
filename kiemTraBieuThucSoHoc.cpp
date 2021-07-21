@@ -20,7 +20,7 @@ string check(string s)
                     ok=false;
                 x=st.top();st.pop();
             }
-            if(ok)
+            if(ok)      //Ko co dau nao
                 return "Yes";
         }
         else st.push(s[i]);
