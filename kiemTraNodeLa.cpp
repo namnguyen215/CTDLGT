@@ -16,6 +16,7 @@ node *newnode(int val)
     tmp->right=NULL;
     return tmp;
 }
+long sum=0;
 node *buildTree(data a[],int n)
 {
     node *t=NULL;
@@ -69,8 +70,10 @@ int main()
         int n;
         cin>>n;
         data a[n+1];
+        sum=0;
         for(int i=0;i<n;i++)
             cin>>a[i].cha>>a[i].con>>a[i].direct;
         isSameLevel(buildTree(a,n));
+        cout<<sum<<endl;
     }
 }

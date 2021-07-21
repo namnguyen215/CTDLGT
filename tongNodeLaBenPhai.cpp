@@ -8,7 +8,7 @@ struct data{
     int cha,con;
     char lr;
 };
-long sum=0;
+
 node *newnode(int x)
 {
     node *tmp=new node;
@@ -32,7 +32,7 @@ node *buildTree(data a[],int n)
                 t=parent;
         }
         else{
-            m[a[i].cha]=parent;
+           parent=m[a[i].cha];
         }
         
         node *child=newnode(a[i].con);
@@ -46,10 +46,23 @@ node *buildTree(data a[],int n)
 }
 long tongNodePhai(node *t)
 {
-    if(t->left==NULL && t->right==NULL)
-        sum+=t->value;
-    tongNodePhai(t->left);
-    tongNodePhai(t->right);
+    long sum=0;
+    stack<node*> st;
+    st.push(t);
+    while(!st.empty())
+    {
+        node *r=st.top();st.pop();
+        if(r->left!=NULL)
+            st.push(r->left);
+        if(r->right!=NULL)
+        {
+            if(r->right->left==NULL && r->right->right==NULL)
+            {
+                sum+=r->right->value;
+            }
+            st.push(r->right);
+        }
+    }
     return sum;
 }
 int main()
@@ -57,7 +70,6 @@ int main()
     int t;cin>>t;
     while(t--)
     {
-        sum=0;
         int n;cin>>n;
         data a[n+1];
         for(int i=0;i<n;i++)
